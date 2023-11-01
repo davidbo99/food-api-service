@@ -1,7 +1,7 @@
 # README para el Proyecto de Recetas (BACKEND)
 
 ## Descripción
-Este proyecto es el backend de una aplicación de recetas, desarrollado utilizando FastAPI, SQLAlchemy y Alembic. Ofrece funcionalidades como búsqueda de recetas, creación de usuarios, autenticación, y manejo de migraciones de base de datos.
+Este proyecto es el backend de una aplicación de recetas, desarrollado utilizando FastAPI, SQLAlchemy y Alembic. Ofrece funcionalidades como búsqueda de recetas, top 5 de recetas más buscadas, creación de usuarios, y manejo de migraciones de base de datos.
 
 ## Requisitos Previos
 - Python 3.8 o superior
