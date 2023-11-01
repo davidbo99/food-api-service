@@ -10,7 +10,7 @@ Este proyecto es el backend de una aplicación de recetas, desarrollado utilizan
 ## Configuración del Entorno
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/davidbo99/food-api-service.git
    cd tu-repositorio
    ```
 
