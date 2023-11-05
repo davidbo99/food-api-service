@@ -8,8 +8,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 alembic = "^1.12.1"
-fastapi = "^0.104.0"
+fastapi = {extras = ["all"], version = "^0.104.1"}
 sqlalchemy = "^2.0.22"
+dependency-injector = "^4.41.0"
+psycopg2-binary = "^2.9.9"
+uvicorn = {extras = ["standar"], version = "^0.23.2"}
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
 
 
 [build-system]
