@@ -8,8 +8,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 alembic = "^1.12.1"
-fastapi = "^0.104.0"
+fastapi = {extras = ["all"], version = "^0.104.1"}
 sqlalchemy = "^2.0.22"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+requests = "^2.31.0"
 
 
 [build-system]
