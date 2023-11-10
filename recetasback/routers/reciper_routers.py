@@ -1,9 +1,10 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 from ..services.services import get_recipes_by_ingredients
+from typing import List
 
 router = APIRouter()
 
 @router.get("/recipes/")
-def search_recipes(ingredients: str, page: int = 1, limit: int = 10):
-    recipes = get_recipes_by_ingredients(ingredients, page, limit)
+def search_recipes(ingredient: str = Query(...)):
+    recipes = get_recipes_by_ingredients(ingredient)
     return {"recipes": recipes}

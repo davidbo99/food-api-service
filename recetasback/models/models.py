@@ -1,30 +1,18 @@
 """Modelos de datos"""
 
-from pydantic import BaseModel
-
-class RecipeBase(BaseModel):
-    name: str
-    ingredients: str
-    image: str
-    link: str
-    visit_count: int
-
-class RecipeCreate(RecipeBase):
-    pass
-
-class Recipe(RecipeBase):
-    id: int
-
-# Modelo de base de datos (SQLAlchemy)
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean, ARRAY
 from database import Base
 
 class RecipeDB(Base):
-    __tablename__ = "recipes" #columna unica para cada receta que va a servir para identificarlas de manera unica
+    __tablename__ = "recipes"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    ingredients = Column(String)
+    id = Column(String, primary_key=True)
+    title = Column(String)
     image = Column(String)
-    link = Column(String)
-    visit_count = Column(Integer)
+    readyInMinutes = Column(Integer)
+    dairyFree = Column(Boolean)
+    glutenFree = Column(Boolean)
+    ketogenic = Column(Boolean)
+    vegan = Column(Boolean)
+    instructions = Column(String)
+    extendedIngredients_aisle = Column(ARRAY(String))
