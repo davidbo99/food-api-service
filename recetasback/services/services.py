@@ -2,7 +2,7 @@
 de datos y la búsqueda de recetas por ingredientes"""
 
 from fastapi import HTTPException
-from ..schemas.schemas import RecipeBase
+from ..schemas.schemas import Recipe
 from sqlalchemy.orm import Session
 import requests
 import os, json
@@ -12,16 +12,7 @@ SPOONACULAR_API_BASE_URL = "https://api.spoonacular.com"
 
 
 API_KEY = os.environ.get("SPOONACULAR_API_KEY", None)
-
-
-
-def create_recipe(db: Session, recipe: RecipeBase):
-    db_recipe = RecipeBase(**recipe.model_dump())
-    db.add(db_recipe)
-    db.commit()
-    db.refresh(db_recipe)
-    return db_recipe
-
+HEADERS_API= { "x-api-key": API_KEY }
 
 
 def get_recipes_by_ingredients(ingredients: str):
@@ -48,18 +39,14 @@ def get_recipes_by_ingredients(ingredients: str):
     
     return detailed_recipes
 
+
 def fetch_recipes_by_ingredients(ingredients: str):
     endpoint = "/recipes/findByIngredients"
-    headers_api = {
-        "x-api-key": API_KEY,
-    }
     url = f"{SPOONACULAR_API_BASE_URL}{endpoint}?ingredients={ingredients}&number=20"
-    return json.loads(requests.request("GET", url, headers=headers_api).text)
+    return json.loads(requests.request("GET", url, headers=HEADERS_API).text)
+
 
 def fetch_recipe_details(recipe_id: int):
     endpoint = f"/recipes/{recipe_id}/information"
-    headers_api = {
-        "x-api-key": API_KEY,
-    }
     url = f"{SPOONACULAR_API_BASE_URL}{endpoint}"
-    return json.loads(requests.request("GET", url, headers=headers_api).text)
+    return json.loads(requests.request("GET", url, headers=HEADERS_API).text)
