@@ -10,14 +10,14 @@ from sqlalchemy.ext.declarative import declarative_base
 
 def get_db_name():
     return os.environ.get('DB_NAME', '')
-# database_url = os.environ.get('DB_NAME', 'sqlite:///')
+
 
 def get_db_password():
-   return os.environ.get('DB-PASS', '') 
+   return os.environ.get('DB_PASS', '') 
 
 def get_db_host():
     return f"{os.environ.get('DB_HOST', '') }:\
-        {os.environ.get('DB_PORT', )}"
+        {os.environ.get('DB_PORT', 5432)}"
 
 def get_db_user():
     return os.environ.get('DB_USER', '') 
@@ -25,11 +25,10 @@ def get_db_user():
 def database_url():
     return f"postgresql://{get_db_user()}:{get_db_password()}@{get_db_host()}/{get_db_name()}"
 
-
-#epresenta el motor de la base de datos, 
+#representa el motor de la base de datos, 
 # con el comando "echo=True" para que al momento de realizar la base de datos,
 # muestre por consola lo que esta realizando, que seria el codigo
-engine = create_engine(database_url, echo = True)
+engine = create_engine(database_url(), echo = True)
 
 # Se crea session para conectarse a la base de datos, 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
