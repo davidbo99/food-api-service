@@ -11,7 +11,7 @@ CONECTION = os.getenv("URL_CONECTION_FRONT")
 # Configuración del middleware CORS ()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["CONECTION"],
+    allow_origins=[CONECTION],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
