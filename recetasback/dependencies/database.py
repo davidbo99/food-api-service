@@ -6,12 +6,15 @@ from enum import Enum, auto
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 import logging
 
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+Base = declarative_base()
 
 
 class HealthStatus(Enum):

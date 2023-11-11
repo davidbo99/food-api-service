@@ -10,11 +10,18 @@ python = "^3.9"
 alembic = "^1.12.1"
 fastapi = {extras = ["all"], version = "^0.104.1"}
 sqlalchemy = "^2.0.22"
-dependency-injector = "^4.41.0"
 psycopg2-binary = "^2.9.9"
-uvicorn = {extras = ["standar"], version = "^0.23.2"}
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+flake8 = "^6.1.0"
+mypy = "^1.6.1"
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
+passlib = "^1.7.4"
+types-passlib = "^1.7.7.13"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+types-python-jose = "^3.3.4.8"
+httpx = "^0.25.0"
+requests = "^2.31.0"
 
 
 [build-system]
