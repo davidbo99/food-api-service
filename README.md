@@ -27,7 +27,7 @@
 
     * ** Configuración para conectarse a una base de datos:
 
-    ![Alt text](images/image.png)
+   ![Alt text](images/image.png)
 
     * ** Configuración de variables de entorno:
     Crear un archivo .envrc 
