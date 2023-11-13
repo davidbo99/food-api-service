@@ -32,7 +32,7 @@
     * ** Configuración de variables de entorno:
     Crear un archivo .envrc 
 
-    ![Alt text](images/image-1.png)
+   ![Alt text](images/image-1.png)
   
 ### **Inicialización de Alembic**
 
